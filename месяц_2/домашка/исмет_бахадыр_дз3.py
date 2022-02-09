@@ -20,15 +20,13 @@ class Computer:
         self.__memory = value
 
     def make_computations(self):
-        return f'Result of sum: {self.__cpu + self.__memory}'
+        return f'Результат суммы: {self.__cpu + self.__memory}'
 
     def __gt__(self, other):
         return self.memory > other.memory
 
-    def info(self):
-        return f'CPU of computer {self.cpu}\nMemory of computer {self.memory}\n'
     def __str__(self):
-        return f'CPU of computer{self.cpu} \nMemory of computer{self.memory}\n'
+        return f'Центральный процессор компьютера: {self.cpu}\nПамять компьютера: {self.memory}\n'
 
 class Phone:
     def __init__(self, sim_cards_list):
@@ -42,42 +40,37 @@ class Phone:
     def sim_cards_list(self, value):
         self.__sim_cards_list = value
 
-    def sims(self):
-        return f'list of sim card: {list}'
-
     def __str__(self):
-        return f'list of sim card: {list}'
+        return f'список сим-карт: {list}'
 
     def call(self, sim_card_number, call_to_number):
-        return f'Calling to number{call_to_number} from sim{sim_card_number}'
+        return f'Звонок на номер: {call_to_number} от сим: {sim_card_number}'
 
 class SmartPhone(Computer, Phone):
     def __init__(self, cpu, memory, sim_card_list):
         Computer.__init__(self, cpu, memory)
         Phone.__init__(self, sim_card_list)
 
-    def use_gps(self, location):
-        print(f'Move forward to get:{location}')
+    def GPS(self, location):
+        print(f'Двигайтесь вперед, чтобы получить: {location}')
 
     def __str__(self):
-        return f'CPU of phone{self.cpu}\nMemory of phone{self.memory}\n'
+        return f'Центральный процессор телефона: {self.cpu}\nПамять телефона: {self.memory}\n'
 
 
-computer = Computer(6, 1024)
-print(computer.info())
+computer = Computer(64, 512)
 print(computer.make_computations())
-sim_1 = '1 - MegaCome'
-sim_2 = '2 - Beeline'
+sim_1 = 'MegaCome'
+sim_2 = 'Oshka'
 list = [sim_1, sim_2]
 phone = Phone(1)
-phone.sims()
 
-print(phone.call(list[0], 755670170))
-smartphone = SmartPhone(3, 12, list)
-smartphone.use_gps('Sum')
-smartphone.info()
 
-print('_______________Results of str______________')
+print(phone.call(list[0], 996552541188))
+smartphone = SmartPhone(8, 128, list)
+smartphone.GPS('Сумму')
+
+
 print(computer)
 print(phone)
 print(smartphone)
