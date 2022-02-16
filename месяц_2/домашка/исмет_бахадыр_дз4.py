@@ -94,8 +94,8 @@ class Berserk(Hero):
     def apply_super_ability(self, boss, heroes):
         for hero in heroes:
             if hero.health > 0:
-                hero.damage = hero.damage + boss.damage / 4
-
+                self.damage = self.damage + boss.damage
+                pass
 
 class Thor(Hero):
     def __init__(self, name, health, damage):
