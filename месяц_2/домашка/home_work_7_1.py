@@ -13,6 +13,6 @@ for i in range(len(A)):
 
     A[i], A[min_idx] = A[min_idx], A[i]
 
-print("Finish Sort")
+print("Finely Sort")
 for i in range(len(A)):
     print("%d" % A[i], end=" ""\n")

@@ -1,6 +1,6 @@
 import numpy
 
-def bubbleSort(arr):
+def bubble_Sort(arr):
     n = len(arr)
 
     for i in range(n):
@@ -12,7 +12,7 @@ def bubbleSort(arr):
 
 
 arr =  random_integer_array = numpy.random.random_integers(1, 1000, 999)
-print("1-мерный массив случайных целых чисел \n", random_integer_array, "\n")
+print(random_integer_array, "\n")
 
 bubbleSort(arr)
 
